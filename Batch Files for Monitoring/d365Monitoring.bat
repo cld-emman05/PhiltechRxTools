@@ -13,11 +13,12 @@ set "capacity=https://admin.powerplatform.microsoft.com/resources/capacity/envir
 
 
 REM Wait for the browser to open
+start "" "%browserPath%" --new-window ""
 timeout /t 5 /nobreak >nul 2>&1
 
 REM Open multiple websites in a single browser window
-start "" "%browserPath%" --new-window "%sysJobs%
-start "" "%browserPath%" --new-tab "%plugins%
-start "" "%browserPath%" --new-tab "%capacity%
+start "" "%browserPath%" --new-tab "%sysJobs%"
+start "" "%browserPath%" --new-tab "%plugins%"
+start "" "%browserPath%" --new-tab "%capacity%"
 
 endlocal
