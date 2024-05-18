@@ -24,7 +24,7 @@ jobs:
       run: mvn test
     
     - name: Archive the JAR file
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: TextTools
         path: JavaTools/TextTools.jar
