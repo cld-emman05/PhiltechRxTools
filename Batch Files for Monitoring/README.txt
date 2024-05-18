@@ -9,3 +9,6 @@ This directory consist of the following Batch (.bat) files to provide all the to
 3) prodAuthMonitoring.bat - a monitoring links from Grafana (RXIE), that provides updates on Auth and GQL activities for an interval of three hours. Screenshots must be sent to the Prod Auth GC in MS Teams.
 
 4) rcpMonitoring.bat - a monitoring link for the Grafana and Kafka updates, which must be sent via email every three hours.
+
+JavaTools
+- A collection of JAR files that requires Java 11 before running
