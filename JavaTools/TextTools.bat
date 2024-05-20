@@ -1,4 +1,4 @@
 @echo off
-set PATH=%~dp0JRE\bin;%PATH%
+SET j11="..\Java11\bin\java.exe"
 
-java -jar TextTools.jar
+%j11% -jar TextTools.jar
