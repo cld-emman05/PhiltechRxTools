@@ -1,4 +1,4 @@
-rem @echo off
+@echo off
 setlocal
 
 REM Define the browser path
@@ -11,6 +11,7 @@ set "kafka=https://pgm010d01.albertsons.com:8443/clusters/61rB1zleQD-vOkp7VXcFwQ
 
 
 REM Wait for the browser to open
+start snippingtool.exe
 start "" "%browserPath%" --new-window "" 
 timeout /t 5 /nobreak >nul 2>&1
 

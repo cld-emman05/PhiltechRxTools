@@ -13,6 +13,7 @@ set "capacity=https://admin.powerplatform.microsoft.com/resources/capacity/envir
 
 
 REM Wait for the browser to open
+start snippingtool.exe
 start "" "%browserPath%" --new-window ""
 timeout /t 5 /nobreak >nul 2>&1
 
