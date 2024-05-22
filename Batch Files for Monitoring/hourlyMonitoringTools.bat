@@ -1,9 +1,11 @@
 @echo off
-setlocal
+SETLOCAL EnableDelayedExpansion
 
-set "today=20240508"
-set "epochToday=1715083200" 
-rem 1714996800 = // 20240506000000
+SET "j11=..\JavaTools\Java11\bin\java.exe"
+SET "jarFile=..\JavaTools\DateConverter.jar"
+
+for /F "delims=" %%i in ('%j11% -jar %jarFile% "sys_date"') do set "today=%%i"
+for /F "delims=" %%j in ('%j11% -jar %jarFile% "epoch"') do set "epochToday=%%j"
 
 REM Define the browser path
 set "browserPath=C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
@@ -11,9 +13,9 @@ set "browserPath=C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 REM Define the websites to open
 set "monitoring_sheet=https://shorturl.at/vHRWY"
 
-set "sinch_sms=https://dashboard.sinch.com/sms/analytics"
+set "sinch_sms=https://dashboard.sinch.com/sms/analytics?start=%today%000000&end=%today%235959&projectIds[0]=ae871071-e09d-49f7-a62f-1d18d627d2fc"
 
-set "sinch_convapi=https://dashboard.sinch.com/convapi/analytics"
+set "sinch_convapi=https://dashboard.sinch.com/convapi/analytics?dateRange[startDate]=%epochToday%&dateRange[endDate]=%epochToday%"
 
 set "journey_rcp_b2b_group=https://abs-healthwellness-mgmt.crm.dynamics.com/main.aspx?appid=1785c743-a97d-ec11-8d21-000d3a5ca507&pagetype=entityrecord&etn=msdynmkt_journey&id=09eafa1e-bec1-ee11-9079-000d3a3236e0"
 
